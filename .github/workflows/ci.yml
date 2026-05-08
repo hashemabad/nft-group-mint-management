@@ -1,0 +1,45 @@
+name: CI
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+
+jobs:
+  contracts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "npm"
+          cache-dependency-path: contracts/package.json
+      - name: Install contracts deps
+        working-directory: contracts
+        run: npm install
+      - name: Compile contracts
+        working-directory: contracts
+        run: npx hardhat compile
+
+  frontend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "npm"
+          cache-dependency-path: frontend/package.json
+      - name: Install frontend deps
+        working-directory: frontend
+        run: npm install
+      - name: Build frontend
+        working-directory: frontend
+        env:
+          NEXT_PUBLIC_CHAIN_ID: "84532"
+          NEXT_PUBLIC_RPC_URL: "https://sepolia.base.org"
+          NEXT_PUBLIC_CONTRACT_ADDRESS: "0x0000000000000000000000000000000000000000"
+          NEXT_PUBLIC_MINT_PRICE_WEI: "2000000000000000"
+          NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID: "replace-me"
+        run: npm run build

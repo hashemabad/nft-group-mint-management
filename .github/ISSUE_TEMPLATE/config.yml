@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security report
+    url: mailto:info@mohammadnasser.com
+    about: Report vulnerabilities privately.
+  - name: Project website
+    url: https://mohammadnasser.com
+    about: More information about the maintainer.

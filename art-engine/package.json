@@ -1,0 +1,14 @@
+{
+  "name": "nft-group-mint-management-art-engine",
+  "version": "1.0.0",
+  "private": true,
+  "author": "Mohammad Nasser Haji Hashemabad <info@mohammadnasser.com>",
+  "homepage": "https://mohammadnasser.com",
+  "type": "module",
+  "scripts": {
+    "generate": "node src/generate.js"
+  },
+  "dependencies": {
+    "sharp": "^0.34.4"
+  }
+}

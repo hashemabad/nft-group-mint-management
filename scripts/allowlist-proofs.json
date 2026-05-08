@@ -1,0 +1,19 @@
+{
+  "merkleRoot": "0x600f5e34b4e6c4feae9db0b097df9aa8f65c526ed9759a1870b61376a7fbf4cb",
+  "entries": [
+    {
+      "address": "0x1111111111111111111111111111111111111111",
+      "allowance": 2,
+      "proof": [
+        "0x96b6dc3a24aa7b48ec1cf4560063a2142eabf8897b5f26dc18f78791d4356c53"
+      ]
+    },
+    {
+      "address": "0x2222222222222222222222222222222222222222",
+      "allowance": 1,
+      "proof": [
+        "0xfde38319eec56e703ba771c1e2abddca86188674940372bdfed26cec392ec314"
+      ]
+    }
+  ]
+}
