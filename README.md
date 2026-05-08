@@ -1,5 +1,8 @@
 # NFT Group Mint & Management (Base + ERC721A)
 
+A professional starter for launching, minting, and managing an NFT project with a `6666` max supply on Base.
+This repository covers the full launch path: smart contracts, frontend, metadata generation, IPFS upload, and launch-day operations.
+
 یک استارتر حرفه‌ای برای راه‌اندازی، مینت و مدیریت پروژه NFT با سقف `6666` روی شبکه Base.
 این ریپو کل مسیر لانچ را پوشش می‌دهد: قرارداد، فرانت، تولید متادیتا، آپلود IPFS و عملیات روز لانچ.
 
@@ -27,17 +30,86 @@ cd ../frontend && npm install && cp .env.example .env.local && npm run dev
 
 ## Why This Repository
 
-- لانچ کامل NFT از قرارداد تا فرانت و متادیتا را پوشش می‌دهد.
-- برای سناریوی واقعی مینت (`allowlist -> public -> reveal`) آماده شده است.
-- روی امنیت لانچ، کنترل بات و آماده‌سازی روز انتشار تمرکز دارد.
+- Covers the complete NFT launch lifecycle from contract to frontend and metadata.
+- Prepared for real-world mint flow (`allowlist -> public -> reveal`).
+- Focused on launch security, bot mitigation, and operational readiness.
 
-## SEO Keywords
+## Keywords
 
 `NFT minting`, `NFT launch`, `Base chain`, `ERC721A`, `Hardhat`, `Next.js`, `wagmi`, `allowlist`, `Merkle proof`, `royalty`, `IPFS metadata`, `web3 project starter`
 
 ## Project Description
 
 This repository is a practical starter for launching, minting, and managing an NFT project with a `6666` max supply on Base.
+
+## English Guide
+
+### Overview
+
+This project provides an end-to-end NFT launch starter on Base, including:
+- ERC721A smart contract with allowlist/public mint flow
+- Next.js mint frontend (wagmi + wallet integration)
+- Art and metadata generation engine
+- Utility scripts for Merkle allowlist and IPFS uploads
+
+### Main Features
+
+- Public mint + allowlist mint (Merkle proof based)
+- Anti-bot constraints (`maxPerTx`, per-wallet limits, cooldown)
+- Reveal flow using `hiddenTokenURI`
+- Configurable EIP-2981 royalties
+- Admin controls for launch-critical parameters
+
+### Repository Structure
+
+- `contracts/`: ERC721A contract + Hardhat deployment/admin scripts
+- `frontend/`: Next.js mint website
+- `art-engine/`: image + metadata generator
+- `scripts/`: IPFS upload and Merkle tooling
+- `assets/`: design layers
+- `metadata/`: generated metadata output
+
+### Quick Start (English)
+
+```bash
+# 1) Contracts
+cd contracts
+npm install
+npx hardhat compile
+
+# 2) Frontend
+cd ../frontend
+npm install
+cp .env.example .env.local
+npm run dev
+```
+
+### Environment Essentials
+
+For `contracts/.env`:
+- `PRIVATE_KEY`
+- `BASE_RPC_URL`
+- `BASESCAN_API_KEY`
+- `BASE_URI`
+- `HIDDEN_URI`
+- `ALLOWLIST_MINT_PRICE_WEI`
+- `ROYALTY_RECEIVER`
+- `ROYALTY_BPS`
+
+For `frontend/.env.local`:
+- `NEXT_PUBLIC_CHAIN_ID`
+- `NEXT_PUBLIC_CONTRACT_ADDRESS`
+- `NEXT_PUBLIC_RPC_URL`
+- `NEXT_PUBLIC_MINT_PRICE_WEI`
+- `NEXT_PUBLIC_ALLOWLIST_MINT_PRICE_WEI`
+
+### Launch Validation
+
+- Run contract tests in `contracts/` with `npm run test`
+- Dry-run full flow on Base Sepolia before mainnet launch
+- Prepare incident-ready launch runbook (RPC fallback + comms plan)
+
+## راهنمای فارسی
 
 ## توسعه‌دهنده پروژه
 
